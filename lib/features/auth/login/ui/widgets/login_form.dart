@@ -19,6 +19,8 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm> {
   bool isPasswordObscureText = true;
 
+  TextInputType? keyboardType;
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -31,20 +33,28 @@ class _LoginFormState extends State<LoginForm> {
             style: TextStyles.font16Black600,
           ),
           AppTextFormField(
-            keyboardType: TextInputType.emailAddress,
+            keyboardType: keyboardType,
             suffixIcon: Icon(
               Icons.email_outlined,
               color: ColorsApp.gray,
             ),
-            hintText: 'Enter your Email',
+            hintText: 'Enter your Email OR phone number',
             validator: (value) {
-              if (value == null ||
+              if (keyboardType == TextInputType.phone) {
+                if (value == null ||
+                    value.isEmpty ||
+                    !AppRegex.isPhoneNumberValid(value.toString())) {
+                  return 'Please enter a valid phone number';
+                }
+              } else if (value == null ||
                   value.isEmpty ||
-                  !AppRegex.isEmailValid(value)) {
-                return 'Please enter a valid email';
+                  !AppRegex.isEmailValid(value.toString())) {
+                return 'Please enter a valid email address';
               }
             },
-            controller: context.read<LoginCubit>().emailController,
+            controller: keyboardType == TextInputType.phone
+                ? context.read<LoginCubit>().phoneController
+                : context.read<LoginCubit>().emailController,
           ),
           SizedBox(
             height: 18.h,

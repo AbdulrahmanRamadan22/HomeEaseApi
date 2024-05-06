@@ -1,12 +1,10 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:home_ease/core/di/dependency_injection.dart';
 // import 'package:home_ease/core/di/dependency_injection.dart';
-import 'package:home_ease/core/helpers/constants.dart';
 import 'package:home_ease/core/helpers/my_bloc_observer.dart';
 import 'package:home_ease/core/networking/local/cache_helper.dart';
-import 'package:home_ease/core/routing/routes.dart';
 import 'package:home_ease/home_ease__app.dart';
 // ignore: depend_on_referenced_packages
 import 'package:easy_localization/easy_localization.dart';
@@ -35,6 +33,9 @@ void main() async {
     statusBarIconBrightness:
         Brightness.dark, //<-- For Android SEE HERE (dark icons)
   ));
+
+    setupGetIt();
+
 
   await EasyLocalization.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
