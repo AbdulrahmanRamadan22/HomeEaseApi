@@ -12,9 +12,9 @@ import 'package:home_ease/core/theming/text_styles%20.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeEase extends StatelessWidget {
-  final String? initialRoute;
-
-  const HomeEase({super.key, this.initialRoute});
+  // final String? initialRoute;
+  final AppRouter appRouter;
+  const HomeEase({super.key,required this.appRouter});
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +37,43 @@ class HomeEase extends StatelessWidget {
           // primarySwatch: mainGreen,
           fontFamily: 'Quicksand',
         ),
-        initialRoute: Routes.selectLanguageScreen,
+        initialRoute: Routes.homeLayout,
       ),
     );
   }
 }
+
+
+
+  // var onBoarding = CacheHelper.getData(key: 'onBoarding');
+
+// <<<<<<< HEAD
+  //uId = CacheHelper.getData(key: 'uId');
+
+  // uId != null ? uId = CacheHelper.getData(key: 'uId') : uId = null;
+
+  // log(uId!);
+  // log(uId.toString());
+
+  // var selectLanguageScreen = CacheHelper.getData(key: 'selectLanguageScreen');
+
+  // String initialRoute;
+
+  // if (selectLanguageScreen != null) {
+  //   if (onBoarding != null) {
+  //     if (uId != null) {
+  //       email = CacheHelper.getData(key: 'email');
+  //       if (email == "admin@gmail.com") {
+  //         initialRoute = Routes.dashbordscreen;
+  //       } else {
+  //         initialRoute = Routes.homeLayout;
+  //       }
+  //     } else {
+  //       initialRoute = Routes.loginScreen;
+  //     }
+  //   } else {
+  //     initialRoute = Routes.onBoardingScreen;
+  //   }
+  // } else {
+  //   initialRoute = Routes.selectLanguageScreen;
+  // }

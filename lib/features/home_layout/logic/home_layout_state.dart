@@ -1,11 +1,11 @@
-// part of 'home_layout_cubit.dart';
+part of 'home_layout_cubit.dart';
 
-// @immutable
-// abstract class HomeLayoutState {}
+@immutable
+abstract class HomeLayoutState {}
 
-// class HomeLayoutInitial extends HomeLayoutState {}
+class HomeLayoutInitial extends HomeLayoutState {}
 
-// class BottomNavigationBarChange extends HomeLayoutState {}
+class BottomNavigationBarChange extends HomeLayoutState {}
 
 
 

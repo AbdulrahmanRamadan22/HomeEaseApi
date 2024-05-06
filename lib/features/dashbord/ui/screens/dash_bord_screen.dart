@@ -57,7 +57,7 @@ class DashBordScreen extends StatelessWidget {
                         image: 'assets/images/images.jpeg',
                         title: 'Categories',
                         onTap: () {
-                          context.pushNamed(Routes.adminCategoriesScreen);
+                          // context.pushNamed(Routes.adminCategoriesScreen);
 
                           // Navigator.pushNamed(
                           //     context, '/addcategoriesdashbordscreen');

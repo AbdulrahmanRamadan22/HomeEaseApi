@@ -40,9 +40,7 @@ class _LoginFormState extends State<LoginForm> {
               ),
               hintText: 'Enter your phone number',
               validator: (value) {
-                if (value == null ||
-                    value.isEmpty ||
-                    !AppRegex.isPhoneNumberValid(value)) {
+                if (value == null || value.isEmpty) {
                   return 'Please enter a valid phone number';
                 }
               },

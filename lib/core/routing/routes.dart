@@ -29,8 +29,8 @@ class Routes {
 
   static const String forgetPasswordScreen = "/forgetPasswordScreen";
 
-  static const String adminCategoriesScreen = "/adminCategoriesScreen";
 
+  static const String historyScreen = "/historyScreen";
 
   
 

@@ -8,8 +8,13 @@ import 'package:home_ease/features/auth/login/logic/login_cubit.dart';
 import 'package:home_ease/features/auth/login/ui/login_screen.dart';
 import 'package:home_ease/features/auth/register/logic/register_cubit.dart';
 import 'package:home_ease/features/auth/register/ui/register_screen.dart';
+import 'package:home_ease/features/categorie/ui/categories_scraan.dart';
 import 'package:home_ease/features/company/ui/company_screen.dart';
 import 'package:home_ease/features/contact_us/ui/contact_us_screen.dart';
+import 'package:home_ease/features/history/history_screen.dart';
+import 'package:home_ease/features/home/ui/home_screen.dart';
+import 'package:home_ease/features/home_layout/logic/home_layout_cubit.dart';
+import 'package:home_ease/features/home_layout/ui/home_layout_scraan.dart';
 
 import 'package:home_ease/features/hourlycleaning/ui/hourly_cleaning_screen.dart';
 import 'package:home_ease/features/mywallet/ui/my_wallet_screen.dart';
@@ -22,7 +27,6 @@ import 'package:home_ease/features/select_address/ui/select_address_screen.dart'
 import 'package:home_ease/features/select_language/ui/select_language_screen.dart';
 import 'package:home_ease/features/select_language/ui/terms_and_conditions.dart';
 
-
 class AppRouter {
   AppRouter();
 
@@ -30,17 +34,19 @@ class AppRouter {
     // ignore: non_constant_identifier_names
 
     switch (settings.name) {
-      // case Routes.homeScreen:
-      //   return MaterialPageRoute(
-      //     builder: (context) => BlocProvider(
-      //       create: (context) => HomeCubit(),
-      //       child: const HomeScreen(),
-      //     ),
-      //   );
+      case Routes.homeScreen:
+        return MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
+        );
 
       case Routes.contactUsScreen:
         return MaterialPageRoute(
           builder: (context) => const ContactUS(),
+        );
+
+      case Routes.historyScreen:
+        return MaterialPageRoute(
+          builder: (context) => const HistoryScreen(),
         );
 
       case Routes.onBoardingScreen:
@@ -130,13 +136,10 @@ class AppRouter {
       //   return MaterialPageRoute(
       //     builder: (context) => const EditProfileScreen(),
       //   );
-      // case Routes.categoriesScreen:
-      //   return MaterialPageRoute(
-      //     builder: (context) => BlocProvider(
-      //       create: (context) => CategorieCubit(),
-      //       child: const CategoriesScreen(),
-      //     ),
-      //   );
+      case Routes.categoriesScreen:
+        return MaterialPageRoute(
+          builder: (context) => const CategoriesScreen(),
+        );
 
       // case Routes.adminCategoriesScreen:
       //   return MaterialPageRoute(
@@ -145,15 +148,15 @@ class AppRouter {
       //       child: const AdminCategoriesScreen(),
       //     ),
       //   );
-      // case Routes.homeLayout:
-      //   return MaterialPageRoute(
-      //     builder: (context) => BlocProvider(
-      //       create: (context) => HomeLayoutCubit(),
-      //       child: const HomeLayoutScreen(),
-      //     ),
-      //   );
+      case Routes.homeLayout:
+        return MaterialPageRoute(
+          builder: (context) => BlocProvider(
+            create: (context) => HomeLayoutCubit(),
+            child: const HomeLayoutScreen(),
+          ),
+        );
 
-         case Routes.termsAndConditions:
+      case Routes.termsAndConditions:
         return MaterialPageRoute(
           builder: (context) => const TermsAndConditions(),
         );

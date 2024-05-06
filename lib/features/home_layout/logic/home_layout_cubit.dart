@@ -1,36 +1,34 @@
-// import 'package:bloc/bloc.dart';
-// import 'package:flutter/material.dart';
-// import 'package:home_ease/features/categorie/ui/categories_scraan.dart';
-// import 'package:home_ease/features/home/ui/home_screen.dart';
-// import 'package:home_ease/features/profile/logic/profile_cubit.dart';
-// import 'package:home_ease/features/profile/ui/profile_screen.dart';
-// import 'package:meta/meta.dart';
+import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:home_ease/features/categorie/ui/categories_scraan.dart';
+import 'package:home_ease/features/history/history_screen.dart';
+import 'package:home_ease/features/home/ui/home_screen.dart';
+import 'package:meta/meta.dart';
 
-// part 'home_layout_state.dart';
+part 'home_layout_state.dart';
 
-// class HomeLayoutCubit extends Cubit<HomeLayoutState> {
-//   HomeLayoutCubit() : super(HomeLayoutInitial());
+class HomeLayoutCubit extends Cubit<HomeLayoutState> {
+  HomeLayoutCubit() : super(HomeLayoutInitial());
 
-//   int currentIndex = 0;
+  int currentIndex = 0;
 
-//   // ProfileCubit profileCubit = ProfileCubit();
+  // ProfileCubit profileCubit = ProfileCubit();
 
-//   List<Widget> screens = [
-//     const HomeScreen(),
-//     const CategoriesScreen(),
-//     const ProfileScreen(),
-//   ];
-//   void changeBottomNav(int index) {
-//     currentIndex = index;
+  List<Widget> screens = [
+    const HomeScreen(),
+    const CategoriesScreen(),
+    const HistoryScreen(),
 
+    // const ProfileScreen(),
+  ];
+  void changeBottomNav(int index) {
+    currentIndex = index;
 
-//     emit(BottomNavigationBarChange());
+    emit(BottomNavigationBarChange());
 
-//     // if(currentIndex==2){
+    // if(currentIndex==2){
 
-//     //   profileCubit.getUser();
-//     // }
-
-
-//   }
-// }
+    //   profileCubit.getUser();
+    // }
+  }
+}
