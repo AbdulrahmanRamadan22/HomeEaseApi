@@ -36,84 +36,91 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
       backgroundColor: ColorsApp.white,
       body: Padding(
         padding: EdgeInsets.only(left: 20.w, right: 20.w),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SvgPicture.asset("assets/svgs/logo_and_name.svg",),
-              SizedBox(
-                height: 44.h,
-              ),
-              Text(
-                LocaleKeys.FindYourHomeService.tr(),
-                style: TextStyles.font48Black700,
-              ),
-              SizedBox(
-                height: 58.h,
-              ),
-              Text(
-                LocaleKeys.selectLanguage.tr(),
-                style: const TextStyle(
-                  fontFamily: 'Quicksand',
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
+        child: ListView(
+          children: [
+            SizedBox(
+              height: 30.h,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SvgPicture.asset(
+                  "assets/svgs/logo_and_name.svg",
                 ),
-              ),
-              SizedBox(
-                height: 18.h,
-              ),
-              MyRadioListTile(
-                  titleText: LocaleKeys.English.tr(),
-                  value: 1,
-                  selectedOption: selectedOption,
-                  onChanged: (value) async {
-                    setState(() {
-                      selectedOption = value!;
-                      log(selectedOption.toString());
-                    });
-                    await context.setLocale(const Locale('en'));
-                  }),
-              const Divider(
-                endIndent: 10,
-              ),
-              MyRadioListTile(
-                  titleText: LocaleKeys.Arabic.tr(),
-                  value: 2,
-                  selectedOption: selectedOption,
-                  onChanged: (value) async {
-                    setState(() {
-                      selectedOption = value!;
+                SizedBox(
+                  height: 40.h,
+                ),
+                Text(
+                  LocaleKeys.FindYourHomeService.tr(),
+                  style: TextStyles.font48Black700,
+                ),
+                SizedBox(
+                  height: 58.h,
+                ),
+                Text(
+                  LocaleKeys.selectLanguage.tr(),
+                  style: const TextStyle(
+                    fontFamily: 'Quicksand',
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                SizedBox(
+                  height: 18.h,
+                ),
+                MyRadioListTile(
+                    titleText: LocaleKeys.English.tr(),
+                    value: 1,
+                    selectedOption: selectedOption,
+                    onChanged: (value) async {
+                      setState(() {
+                        selectedOption = value!;
+                        log(selectedOption.toString());
+                      });
+                      await context.setLocale(const Locale('en'));
+                    }),
+                const Divider(
+                  endIndent: 10,
+                ),
+                MyRadioListTile(
+                    titleText: LocaleKeys.Arabic.tr(),
+                    value: 2,
+                    selectedOption: selectedOption,
+                    onChanged: (value) async {
+                      setState(() {
+                        selectedOption = value!;
 
-                      log(selectedOption.toString());
+                        log(selectedOption.toString());
+                      });
+                      await context.setLocale(const Locale('ar'));
+                    }),
+                SizedBox(
+                  height: 18.h,
+                ),
+                MyCheckboxListTile(
+                  isChecked: isChecked,
+                  onChanged: (value) {
+                    setState(() {
+                      isChecked = value!;
                     });
-                    await context.setLocale(const Locale('ar'));
-                  }),
-              SizedBox(
-                height: 18.h,
-              ),
-              MyCheckboxListTile(
-                isChecked: isChecked,
-                onChanged: (value) {
-                  setState(() {
-                    isChecked = value!;
-                  });
-                },
-              ),
-              SizedBox(
-                height: 26.h,
-              ),
-              CustomButton(
-                radius: 16.0,
-                text: LocaleKeys.Enter.tr(),
-                onPressed: () {
-                  context.pushNamed(Routes.onBoardingScreen);
-                  CacheHelper.saveData(
-                      key: "selectLanguageScreen", value: true);
-                },
-              ),
-            ],
-          ),
+                  },
+                ),
+                SizedBox(
+                  height: 26.h,
+                ),
+                CustomButton(
+                  radius: 16.0,
+                  text: LocaleKeys.Enter.tr(),
+                  onPressed: () {
+                    context.pushNamed(Routes.onBoardingScreen);
+                    CacheHelper.saveData(
+                        key: "selectLanguageScreen", value: true);
+                  },
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

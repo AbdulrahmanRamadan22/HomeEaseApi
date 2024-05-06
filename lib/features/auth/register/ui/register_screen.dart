@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:home_ease/core/theming/text_styles%20.dart';
 import 'package:home_ease/core/widgets/custom_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:home_ease/features/auth/register/ui/widgets/register_card_social.dart';
 import 'package:home_ease/features/auth/register/logic/register_cubit.dart';
 import 'package:home_ease/features/auth/register/ui/widgets/already_have_account_text.dart';
 import 'package:home_ease/features/auth/register/ui/widgets/register_bloc_listener.dart';

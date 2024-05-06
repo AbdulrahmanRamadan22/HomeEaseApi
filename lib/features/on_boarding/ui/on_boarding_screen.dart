@@ -47,7 +47,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               ),
               onPressed: () {
                 context.pushNamedAndRemoveUntil(
-                  Routes.homeLayout,
+                  Routes.loginScreen,
                   predicate: (route) => false,
                 );
 

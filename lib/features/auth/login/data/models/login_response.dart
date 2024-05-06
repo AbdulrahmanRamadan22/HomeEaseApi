@@ -1,12 +1,9 @@
 // ignore: depend_on_referenced_packages
 import 'package:json_annotation/json_annotation.dart';
-
-part 'register_response.g.dart';
+part 'login_response.g.dart';
 
 @JsonSerializable()
-class RegisterResponse {
- 
-
+class LoginResponse {
   int? status;
   String? message;
   String? token;
@@ -15,10 +12,10 @@ class RegisterResponse {
   UserData? userData;
   // bool? status;
 
-  RegisterResponse({this.message, this.userData, this.status, this.token});
+  LoginResponse({this.message, this.userData, this.status, this.token});
 
-  factory RegisterResponse.fromJson(Map<String, dynamic> json) =>
-      _$RegisterResponseFromJson(json);
+  factory LoginResponse.fromJson(Map<String, dynamic> json) =>
+      _$LoginResponseFromJson(json);
 }
 @JsonSerializable()
 class UserData {

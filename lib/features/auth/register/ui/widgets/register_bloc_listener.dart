@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_ease/core/helpers/navigation_extensions.dart';
 import 'package:home_ease/core/routing/routes.dart';
 import 'package:home_ease/core/theming/colors.dart';
+import 'package:home_ease/core/widgets/setup_error_state.dart';
 import 'package:home_ease/core/widgets/show_progress_indicator.dart';
 import 'package:home_ease/core/widgets/show_snack_bar.dart';
 import 'package:home_ease/features/auth/register/logic/register_cubit.dart';
@@ -18,8 +19,7 @@ class RegisterBlocListener extends StatelessWidget {
       listenWhen: (previous, current) =>
           current is RegisterLoading ||
           current is RegisterSuccess ||
-          current is RegisterError ||
-          current is CreateUser,
+          current is RegisterError,
       listener: (context, state) {
         state.whenOrNull(
           registerLoading: () {
@@ -29,28 +29,13 @@ class RegisterBlocListener extends StatelessWidget {
             context.pop();
             showSnackBar(
               context,
-              content: "Account created successfully go to home screen".tr(),
-              backgroundColor: ColorsApp.mainGreen,
-            );
-            context.pushReplacementNamed(Routes.homeLayout);
-          },
-          createUser: (data) {
-            context.pop();
-            showSnackBar(
-              context,
-              content: "Account created successfully go to home screen".tr(),
+              content: "Account created successfully".tr(),
               backgroundColor: ColorsApp.mainGreen,
             );
             context.pushReplacementNamed(Routes.homeLayout);
           },
           registerError: (error) {
-            context.pop();
-         
-            showSnackBar(
-              context,
-              content: error.toString(),
-              backgroundColor: ColorsApp.red,
-            );
+            setupErrorState(context, error);
           },
         );
       },

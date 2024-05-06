@@ -21,7 +21,6 @@ mixin _$RegisterState<T> {
     required TResult Function() initial,
     required TResult Function() registerLoading,
     required TResult Function(T data) registerSuccess,
-    required TResult Function(T data) createUser,
     required TResult Function(String error) registerError,
   }) =>
       throw _privateConstructorUsedError;
@@ -30,7 +29,6 @@ mixin _$RegisterState<T> {
     TResult? Function()? initial,
     TResult? Function()? registerLoading,
     TResult? Function(T data)? registerSuccess,
-    TResult? Function(T data)? createUser,
     TResult? Function(String error)? registerError,
   }) =>
       throw _privateConstructorUsedError;
@@ -39,7 +37,6 @@ mixin _$RegisterState<T> {
     TResult Function()? initial,
     TResult Function()? registerLoading,
     TResult Function(T data)? registerSuccess,
-    TResult Function(T data)? createUser,
     TResult Function(String error)? registerError,
     required TResult orElse(),
   }) =>
@@ -49,7 +46,6 @@ mixin _$RegisterState<T> {
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(RegisterLoading<T> value) registerLoading,
     required TResult Function(RegisterSuccess<T> value) registerSuccess,
-    required TResult Function(CreateUser<T> value) createUser,
     required TResult Function(RegisterError<T> value) registerError,
   }) =>
       throw _privateConstructorUsedError;
@@ -58,7 +54,6 @@ mixin _$RegisterState<T> {
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(RegisterLoading<T> value)? registerLoading,
     TResult? Function(RegisterSuccess<T> value)? registerSuccess,
-    TResult? Function(CreateUser<T> value)? createUser,
     TResult? Function(RegisterError<T> value)? registerError,
   }) =>
       throw _privateConstructorUsedError;
@@ -67,7 +62,6 @@ mixin _$RegisterState<T> {
     TResult Function(_Initial<T> value)? initial,
     TResult Function(RegisterLoading<T> value)? registerLoading,
     TResult Function(RegisterSuccess<T> value)? registerSuccess,
-    TResult Function(CreateUser<T> value)? createUser,
     TResult Function(RegisterError<T> value)? registerError,
     required TResult orElse(),
   }) =>
@@ -133,7 +127,6 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() initial,
     required TResult Function() registerLoading,
     required TResult Function(T data) registerSuccess,
-    required TResult Function(T data) createUser,
     required TResult Function(String error) registerError,
   }) {
     return initial();
@@ -145,7 +138,6 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? initial,
     TResult? Function()? registerLoading,
     TResult? Function(T data)? registerSuccess,
-    TResult? Function(T data)? createUser,
     TResult? Function(String error)? registerError,
   }) {
     return initial?.call();
@@ -157,7 +149,6 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? initial,
     TResult Function()? registerLoading,
     TResult Function(T data)? registerSuccess,
-    TResult Function(T data)? createUser,
     TResult Function(String error)? registerError,
     required TResult orElse(),
   }) {
@@ -173,7 +164,6 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(RegisterLoading<T> value) registerLoading,
     required TResult Function(RegisterSuccess<T> value) registerSuccess,
-    required TResult Function(CreateUser<T> value) createUser,
     required TResult Function(RegisterError<T> value) registerError,
   }) {
     return initial(this);
@@ -185,7 +175,6 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(RegisterLoading<T> value)? registerLoading,
     TResult? Function(RegisterSuccess<T> value)? registerSuccess,
-    TResult? Function(CreateUser<T> value)? createUser,
     TResult? Function(RegisterError<T> value)? registerError,
   }) {
     return initial?.call(this);
@@ -197,7 +186,6 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(_Initial<T> value)? initial,
     TResult Function(RegisterLoading<T> value)? registerLoading,
     TResult Function(RegisterSuccess<T> value)? registerSuccess,
-    TResult Function(CreateUser<T> value)? createUser,
     TResult Function(RegisterError<T> value)? registerError,
     required TResult orElse(),
   }) {
@@ -253,7 +241,6 @@ class _$RegisterLoadingImpl<T> implements RegisterLoading<T> {
     required TResult Function() initial,
     required TResult Function() registerLoading,
     required TResult Function(T data) registerSuccess,
-    required TResult Function(T data) createUser,
     required TResult Function(String error) registerError,
   }) {
     return registerLoading();
@@ -265,7 +252,6 @@ class _$RegisterLoadingImpl<T> implements RegisterLoading<T> {
     TResult? Function()? initial,
     TResult? Function()? registerLoading,
     TResult? Function(T data)? registerSuccess,
-    TResult? Function(T data)? createUser,
     TResult? Function(String error)? registerError,
   }) {
     return registerLoading?.call();
@@ -277,7 +263,6 @@ class _$RegisterLoadingImpl<T> implements RegisterLoading<T> {
     TResult Function()? initial,
     TResult Function()? registerLoading,
     TResult Function(T data)? registerSuccess,
-    TResult Function(T data)? createUser,
     TResult Function(String error)? registerError,
     required TResult orElse(),
   }) {
@@ -293,7 +278,6 @@ class _$RegisterLoadingImpl<T> implements RegisterLoading<T> {
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(RegisterLoading<T> value) registerLoading,
     required TResult Function(RegisterSuccess<T> value) registerSuccess,
-    required TResult Function(CreateUser<T> value) createUser,
     required TResult Function(RegisterError<T> value) registerError,
   }) {
     return registerLoading(this);
@@ -305,7 +289,6 @@ class _$RegisterLoadingImpl<T> implements RegisterLoading<T> {
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(RegisterLoading<T> value)? registerLoading,
     TResult? Function(RegisterSuccess<T> value)? registerSuccess,
-    TResult? Function(CreateUser<T> value)? createUser,
     TResult? Function(RegisterError<T> value)? registerError,
   }) {
     return registerLoading?.call(this);
@@ -317,7 +300,6 @@ class _$RegisterLoadingImpl<T> implements RegisterLoading<T> {
     TResult Function(_Initial<T> value)? initial,
     TResult Function(RegisterLoading<T> value)? registerLoading,
     TResult Function(RegisterSuccess<T> value)? registerSuccess,
-    TResult Function(CreateUser<T> value)? createUser,
     TResult Function(RegisterError<T> value)? registerError,
     required TResult orElse(),
   }) {
@@ -401,7 +383,6 @@ class _$RegisterSuccessImpl<T> implements RegisterSuccess<T> {
     required TResult Function() initial,
     required TResult Function() registerLoading,
     required TResult Function(T data) registerSuccess,
-    required TResult Function(T data) createUser,
     required TResult Function(String error) registerError,
   }) {
     return registerSuccess(data);
@@ -413,7 +394,6 @@ class _$RegisterSuccessImpl<T> implements RegisterSuccess<T> {
     TResult? Function()? initial,
     TResult? Function()? registerLoading,
     TResult? Function(T data)? registerSuccess,
-    TResult? Function(T data)? createUser,
     TResult? Function(String error)? registerError,
   }) {
     return registerSuccess?.call(data);
@@ -425,7 +405,6 @@ class _$RegisterSuccessImpl<T> implements RegisterSuccess<T> {
     TResult Function()? initial,
     TResult Function()? registerLoading,
     TResult Function(T data)? registerSuccess,
-    TResult Function(T data)? createUser,
     TResult Function(String error)? registerError,
     required TResult orElse(),
   }) {
@@ -441,7 +420,6 @@ class _$RegisterSuccessImpl<T> implements RegisterSuccess<T> {
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(RegisterLoading<T> value) registerLoading,
     required TResult Function(RegisterSuccess<T> value) registerSuccess,
-    required TResult Function(CreateUser<T> value) createUser,
     required TResult Function(RegisterError<T> value) registerError,
   }) {
     return registerSuccess(this);
@@ -453,7 +431,6 @@ class _$RegisterSuccessImpl<T> implements RegisterSuccess<T> {
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(RegisterLoading<T> value)? registerLoading,
     TResult? Function(RegisterSuccess<T> value)? registerSuccess,
-    TResult? Function(CreateUser<T> value)? createUser,
     TResult? Function(RegisterError<T> value)? registerError,
   }) {
     return registerSuccess?.call(this);
@@ -465,7 +442,6 @@ class _$RegisterSuccessImpl<T> implements RegisterSuccess<T> {
     TResult Function(_Initial<T> value)? initial,
     TResult Function(RegisterLoading<T> value)? registerLoading,
     TResult Function(RegisterSuccess<T> value)? registerSuccess,
-    TResult Function(CreateUser<T> value)? createUser,
     TResult Function(RegisterError<T> value)? registerError,
     required TResult orElse(),
   }) {
@@ -482,158 +458,6 @@ abstract class RegisterSuccess<T> implements RegisterState<T> {
   T get data;
   @JsonKey(ignore: true)
   _$$RegisterSuccessImplCopyWith<T, _$RegisterSuccessImpl<T>> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$CreateUserImplCopyWith<T, $Res> {
-  factory _$$CreateUserImplCopyWith(
-          _$CreateUserImpl<T> value, $Res Function(_$CreateUserImpl<T>) then) =
-      __$$CreateUserImplCopyWithImpl<T, $Res>;
-  @useResult
-  $Res call({T data});
-}
-
-/// @nodoc
-class __$$CreateUserImplCopyWithImpl<T, $Res>
-    extends _$RegisterStateCopyWithImpl<T, $Res, _$CreateUserImpl<T>>
-    implements _$$CreateUserImplCopyWith<T, $Res> {
-  __$$CreateUserImplCopyWithImpl(
-      _$CreateUserImpl<T> _value, $Res Function(_$CreateUserImpl<T>) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = freezed,
-  }) {
-    return _then(_$CreateUserImpl<T>(
-      freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as T,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$CreateUserImpl<T> implements CreateUser<T> {
-  const _$CreateUserImpl(this.data);
-
-  @override
-  final T data;
-
-  @override
-  String toString() {
-    return 'RegisterState<$T>.createUser(data: $data)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CreateUserImpl<T> &&
-            const DeepCollectionEquality().equals(other.data, data));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CreateUserImplCopyWith<T, _$CreateUserImpl<T>> get copyWith =>
-      __$$CreateUserImplCopyWithImpl<T, _$CreateUserImpl<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() registerLoading,
-    required TResult Function(T data) registerSuccess,
-    required TResult Function(T data) createUser,
-    required TResult Function(String error) registerError,
-  }) {
-    return createUser(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? registerLoading,
-    TResult? Function(T data)? registerSuccess,
-    TResult? Function(T data)? createUser,
-    TResult? Function(String error)? registerError,
-  }) {
-    return createUser?.call(data);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? registerLoading,
-    TResult Function(T data)? registerSuccess,
-    TResult Function(T data)? createUser,
-    TResult Function(String error)? registerError,
-    required TResult orElse(),
-  }) {
-    if (createUser != null) {
-      return createUser(data);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(RegisterLoading<T> value) registerLoading,
-    required TResult Function(RegisterSuccess<T> value) registerSuccess,
-    required TResult Function(CreateUser<T> value) createUser,
-    required TResult Function(RegisterError<T> value) registerError,
-  }) {
-    return createUser(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial<T> value)? initial,
-    TResult? Function(RegisterLoading<T> value)? registerLoading,
-    TResult? Function(RegisterSuccess<T> value)? registerSuccess,
-    TResult? Function(CreateUser<T> value)? createUser,
-    TResult? Function(RegisterError<T> value)? registerError,
-  }) {
-    return createUser?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(RegisterLoading<T> value)? registerLoading,
-    TResult Function(RegisterSuccess<T> value)? registerSuccess,
-    TResult Function(CreateUser<T> value)? createUser,
-    TResult Function(RegisterError<T> value)? registerError,
-    required TResult orElse(),
-  }) {
-    if (createUser != null) {
-      return createUser(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CreateUser<T> implements RegisterState<T> {
-  const factory CreateUser(final T data) = _$CreateUserImpl<T>;
-
-  T get data;
-  @JsonKey(ignore: true)
-  _$$CreateUserImplCopyWith<T, _$CreateUserImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -705,7 +529,6 @@ class _$RegisterErrorImpl<T> implements RegisterError<T> {
     required TResult Function() initial,
     required TResult Function() registerLoading,
     required TResult Function(T data) registerSuccess,
-    required TResult Function(T data) createUser,
     required TResult Function(String error) registerError,
   }) {
     return registerError(error);
@@ -717,7 +540,6 @@ class _$RegisterErrorImpl<T> implements RegisterError<T> {
     TResult? Function()? initial,
     TResult? Function()? registerLoading,
     TResult? Function(T data)? registerSuccess,
-    TResult? Function(T data)? createUser,
     TResult? Function(String error)? registerError,
   }) {
     return registerError?.call(error);
@@ -729,7 +551,6 @@ class _$RegisterErrorImpl<T> implements RegisterError<T> {
     TResult Function()? initial,
     TResult Function()? registerLoading,
     TResult Function(T data)? registerSuccess,
-    TResult Function(T data)? createUser,
     TResult Function(String error)? registerError,
     required TResult orElse(),
   }) {
@@ -745,7 +566,6 @@ class _$RegisterErrorImpl<T> implements RegisterError<T> {
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(RegisterLoading<T> value) registerLoading,
     required TResult Function(RegisterSuccess<T> value) registerSuccess,
-    required TResult Function(CreateUser<T> value) createUser,
     required TResult Function(RegisterError<T> value) registerError,
   }) {
     return registerError(this);
@@ -757,7 +577,6 @@ class _$RegisterErrorImpl<T> implements RegisterError<T> {
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(RegisterLoading<T> value)? registerLoading,
     TResult? Function(RegisterSuccess<T> value)? registerSuccess,
-    TResult? Function(CreateUser<T> value)? createUser,
     TResult? Function(RegisterError<T> value)? registerError,
   }) {
     return registerError?.call(this);
@@ -769,7 +588,6 @@ class _$RegisterErrorImpl<T> implements RegisterError<T> {
     TResult Function(_Initial<T> value)? initial,
     TResult Function(RegisterLoading<T> value)? registerLoading,
     TResult Function(RegisterSuccess<T> value)? registerSuccess,
-    TResult Function(CreateUser<T> value)? createUser,
     TResult Function(RegisterError<T> value)? registerError,
     required TResult orElse(),
   }) {

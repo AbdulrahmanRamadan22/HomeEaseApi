@@ -10,7 +10,6 @@ class RegisterState<T> with _$RegisterState<T> {
   const factory RegisterState.registerSuccess(T data) = RegisterSuccess<T>;
 
 
-  const factory RegisterState.createUser(T data) = CreateUser<T>;
 
   const factory RegisterState.registerError({required String error}) = RegisterError;
 }

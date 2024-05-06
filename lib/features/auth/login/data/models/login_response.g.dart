@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'register_response.dart';
+part of 'login_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-RegisterResponse _$RegisterResponseFromJson(Map<String, dynamic> json) =>
-    RegisterResponse(
+LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) =>
+    LoginResponse(
       message: json['message'] as String?,
       userData: json['data'] == null
           ? null
@@ -16,7 +16,7 @@ RegisterResponse _$RegisterResponseFromJson(Map<String, dynamic> json) =>
       token: json['token'] as String?,
     );
 
-Map<String, dynamic> _$RegisterResponseToJson(RegisterResponse instance) =>
+Map<String, dynamic> _$LoginResponseToJson(LoginResponse instance) =>
     <String, dynamic>{
       'status': instance.status,
       'message': instance.message,

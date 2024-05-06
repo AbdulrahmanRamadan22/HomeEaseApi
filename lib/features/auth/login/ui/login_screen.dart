@@ -26,7 +26,7 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: 80.h,
+                height: 100.h,
               ),
               Text(
                 'Login'.tr(),
@@ -38,7 +38,8 @@ class LoginScreen extends StatelessWidget {
                   width: 340.w,
                   child: Text(
                     textAlign: TextAlign.center,
-                    'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.'.tr(),
+                    'We\'re excited to have you back, can\'t wait to see what you\'ve been up to since you last logged in.'
+                        .tr(),
                     style: TextStyles.font14Black500,
                   ),
                 ),

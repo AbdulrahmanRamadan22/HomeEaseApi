@@ -18,6 +18,7 @@ class RegisterForm extends StatefulWidget {
 
 class _RegisterFormState extends State<RegisterForm> {
   bool isPasswordObscureText = true;
+  bool isPasswordConfirmationObscureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -109,6 +110,36 @@ class _RegisterFormState extends State<RegisterForm> {
               }
             },
             controller: cubit.passwordController,
+          ),
+          SizedBox(
+            height: 18.h,
+          ),
+          Text(
+            'Confirm Password'.tr(),
+          ),
+          AppTextFormField(
+            controller: cubit.confirmPasswordController,
+            hintText: 'Password Confirmation',
+            isObscureText: isPasswordConfirmationObscureText,
+            suffixIcon: GestureDetector(
+              onTap: () {
+                setState(() {
+                  isPasswordConfirmationObscureText =
+                      !isPasswordConfirmationObscureText;
+                });
+              },
+              child: Icon(
+                isPasswordConfirmationObscureText
+                    ? Icons.visibility_off
+                    : Icons.visibility,
+                color: ColorsApp.gray,
+              ),
+            ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter a valid PasswordConfirmation';
+              }
+            },
           ),
           SizedBox(
             height: 48.h,
