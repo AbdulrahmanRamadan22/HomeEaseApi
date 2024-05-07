@@ -20,6 +20,7 @@ import 'package:home_ease/features/hourlycleaning/ui/hourly_cleaning_screen.dart
 import 'package:home_ease/features/mywallet/ui/my_wallet_screen.dart';
 import 'package:home_ease/features/notification/ui/notification_screen.dart';
 import 'package:home_ease/features/on_boarding/ui/on_boarding_screen.dart';
+import 'package:home_ease/features/orderdetalis/ui/order_detalis_screen.dart';
 import 'package:home_ease/features/payment/ui/payment_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:home_ease/features/resetpassword/ui/reset_password_screen.dart';
@@ -108,6 +109,10 @@ class AppRouter {
       case Routes.mywalletscreen:
         return MaterialPageRoute(
           builder: (context) => const MyWalletScreen(),
+        );
+         case Routes.orderDetalisScreen:
+        return MaterialPageRoute(
+          builder: (context) => const OrderDetalis(),
         );
 
       // case Routes.dashbordscreen:
