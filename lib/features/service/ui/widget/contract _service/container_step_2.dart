@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:home_ease/core/theming/text_styles%20.dart';
-import 'package:home_ease/features/hourlycleaning/ui/widget/card_detils_step2.dart';
+import 'package:home_ease/features/service/ui/widget/card_detils_step2.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ContainerStep2 extends StatelessWidget {
-  const ContainerStep2({
+class ContainerStepTowContractService extends StatelessWidget {
+  const ContainerStepTowContractService({
     super.key,
   });
 
@@ -19,7 +19,7 @@ class ContainerStep2 extends StatelessWidget {
         SizedBox(
           height: 28.h,
         ),
-        CardDetils(
+        CardDetails(
           imageIcon: 'assets/images/talg131.png',
           textStar: '⭐',
           cityName: 'Egypt'.tr(),
@@ -35,7 +35,7 @@ class ContainerStep2 extends StatelessWidget {
         SizedBox(
           height: 8.h,
         ),
-        CardDetils(
+        CardDetails(
           imageIcon: 'assets/images/talg131.png',
           textStar: '⭐',
           cityName: 'Egypt'.tr(),
@@ -47,6 +47,9 @@ class ContainerStep2 extends StatelessWidget {
           subtitleText2: 'natus error sit voluptatem accusantium'.tr(),
           imageHourlyclean: 'assets/images/hour_icon.png',
           imagecity: 'assets/images/city.png',
+        ),
+        SizedBox(
+          height: 40.h,
         ),
       ],
     );

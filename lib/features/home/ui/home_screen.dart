@@ -81,7 +81,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     // "Find your home service \nNeed a helping hand today?".tr(),
                     style: TextStyles.font24Black700,
                   ),
-                  cardLocation(),
+                  // cardLocation(),
+
+                  SizedBox(
+                    height: 20.h,
+                  ),
                   Image.asset("assets/images/banner1.png"),
                   SizedBox(
                     height: 28.h,
@@ -126,7 +130,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         );
                       }
-                      return const Center(child: CircularProgressIndicator());
+                      return const Center(
+                          child: CircularProgressIndicator(
+                        color: ColorsApp.mainGreen,
+                      ));
                     },
                   ),
                 ],

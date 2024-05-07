@@ -8,7 +8,7 @@ import 'package:home_ease/core/theming/text_styles%20.dart';
 import 'package:home_ease/core/widgets/card_address_location.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home_ease/core/widgets/custom_button.dart';
-import 'package:home_ease/features/hourlycleaning/ui/widget/button_card.dart';
+import 'package:home_ease/features/service/ui/widget/button_card.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:home_ease/features/mywallet/ui/widget/card_wallet.dart';
 

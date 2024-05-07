@@ -7,8 +7,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:home_ease/core/theming/colors.dart';
 import 'package:home_ease/core/theming/text_styles%20.dart';
 
-class CardDetils extends StatelessWidget {
-  const CardDetils({
+class CardDetails extends StatelessWidget {
+  const CardDetails({
     Key? key,
     this.imageIcon,
     this.textStar,

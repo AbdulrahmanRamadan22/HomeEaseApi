@@ -6,23 +6,30 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home_ease/core/helpers/app_regex.dart';
+import 'package:home_ease/core/helpers/constants.dart';
 import 'package:home_ease/core/theming/colors.dart';
 import 'package:home_ease/core/theming/text_styles%20.dart';
 import 'package:home_ease/core/widgets/custom_button.dart';
-import 'package:home_ease/features/hourlycleaning/ui/widget/container_step.3.dart';
-import 'package:home_ease/features/hourlycleaning/ui/widget/container_step_2.dart';
-import 'package:home_ease/features/hourlycleaning/ui/widget/containet_step_1.dart';
+import 'package:home_ease/features/categorie/data/models/category_model.dart';
+import 'package:home_ease/features/service/ui/widget/hourly_service/container_step.3.dart';
+import 'package:home_ease/features/service/ui/widget/hourly_service/container_step_2.dart';
+import 'package:home_ease/features/service/ui/widget/hourly_service/containet_step_1.dart';
 
-class HourlyCleaningScreen extends StatefulWidget {
-  const HourlyCleaningScreen({
+class HourlyServiceScreen extends StatefulWidget {
+
+  final Categories? category;
+
+  const HourlyServiceScreen({
     key,
+    required this.category
   }) : super(key: key);
 
   @override
   _HourlyCleaningScreen createState() => _HourlyCleaningScreen();
 }
 
-class _HourlyCleaningScreen extends State<HourlyCleaningScreen> {
+class _HourlyCleaningScreen extends State<HourlyServiceScreen> {
   int _currentStep = 0;
   bool isCompleted = false; //check completeness of inputs
   final formKey =
@@ -34,7 +41,7 @@ class _HourlyCleaningScreen extends State<HourlyCleaningScreen> {
 
   final city = TextEditingController();
 
-  final numberOfVisits = TextEditingController();
+  final address = TextEditingController();
 
   void _goToNextStep() {
     final isLastStep = _currentStep == _mySteps().length - 1;
@@ -84,12 +91,12 @@ class _HourlyCleaningScreen extends State<HourlyCleaningScreen> {
                 child: Row(
                   children: [
                     Text(
-                      'Hourly cleaning'.tr(),
+                      '${widget.category!.name}'.tr(),
                       style: TextStyles.font24mainGreen700,
                     ),
                     const Spacer(),
-                    Image.asset(
-                      'assets/images/flat.png',
+                    Image.network(
+                      '$serverPhotoURL/${widget.category!.path}',
                       width: 100,
                     ),
                   ],
@@ -156,12 +163,18 @@ class _HourlyCleaningScreen extends State<HourlyCleaningScreen> {
       ),
     );
   }
+
   bool isDetailComplete() {
     if (_currentStep == 0) {
       //check sender fields
       if (numberOfHours.text.isEmpty ||
           nationality.text.isEmpty ||
-          city.text.isEmpty) {
+          city.text.isEmpty ||
+          city.text.length < 3 ||
+          nationality.text.length < 3 ||
+          AppRegex.isText(nationality.text) == false ||
+          AppRegex.isText(city.text) == false ||
+          AppRegex.hasNumber(numberOfHours.text) == false) {
         return false;
       } else {
         return true; //if all fields are not empty
@@ -176,7 +189,9 @@ class _HourlyCleaningScreen extends State<HourlyCleaningScreen> {
       // }
     } else if (_currentStep == 2) {
       //check receiver fields
-      if (numberOfVisits.text.isEmpty) {
+      if (address.text.isEmpty ||
+          address.text.length < 3 ||
+          AppRegex.isText(address.text) == false) {
         return false;
       } else {
         return true;
@@ -185,8 +200,6 @@ class _HourlyCleaningScreen extends State<HourlyCleaningScreen> {
     return false;
   }
 
-
-
   List<Step> _mySteps() {
     List<Step> steps = [
       Step(
@@ -194,7 +207,7 @@ class _HourlyCleaningScreen extends State<HourlyCleaningScreen> {
           'Step 1'.tr(),
           style: TextStyles.font12mainGreen700,
         ),
-        content: ContainerStepOne(
+        content: ContainerStepOneHourlyService(
           City: city,
           Nationality: nationality,
           numberOfHours: numberOfHours,
@@ -207,7 +220,7 @@ class _HourlyCleaningScreen extends State<HourlyCleaningScreen> {
           'Step 2'.tr(),
           style: TextStyles.font12mainGreen700,
         ),
-        content: const ContainerStep2(),
+        content: const ContainerStepTowHourlyService(),
         isActive: _currentStep >= 1,
       ),
       Step(
@@ -215,8 +228,8 @@ class _HourlyCleaningScreen extends State<HourlyCleaningScreen> {
           'Step 3'.tr(),
           style: TextStyles.font12mainGreen700,
         ),
-        content: ContainerStep3(
-          numberOfVisits: numberOfVisits,
+        content: ContainerStepThreeHourlyService(
+          address: address,
         ),
         isActive: _currentStep >= 2,
       ),

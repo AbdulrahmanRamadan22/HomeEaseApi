@@ -16,8 +16,9 @@ import 'package:home_ease/features/history/history_screen.dart';
 import 'package:home_ease/features/home/ui/home_screen.dart';
 import 'package:home_ease/features/home_layout/logic/home_layout_cubit.dart';
 import 'package:home_ease/features/home_layout/ui/home_layout_scraan.dart';
+import 'package:home_ease/features/service/ui/contract%20_service_screen.dart';
 
-import 'package:home_ease/features/hourlycleaning/ui/hourly_cleaning_screen.dart';
+import 'package:home_ease/features/service/ui/hourly_service_screen.dart';
 import 'package:home_ease/features/mywallet/ui/my_wallet_screen.dart';
 import 'package:home_ease/features/notification/ui/notification_screen.dart';
 import 'package:home_ease/features/on_boarding/ui/on_boarding_screen.dart';
@@ -106,9 +107,20 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const AddAddressScreen(),
         );
-      case Routes.hourlyCleanScreen:
+      case Routes.hourlyServiceScreen:
+        final category = settings.arguments as Categories;
         return MaterialPageRoute(
-          builder: (context) => const HourlyCleaningScreen(),
+          builder: (context) => HourlyServiceScreen(
+            category: category,
+          ),
+        );
+      case Routes.contractServiceScreen:
+        final category = settings.arguments as Categories;
+
+        return MaterialPageRoute(
+          builder: (context) => ContractServiceScreen(
+            category: category,
+          ),
         );
 
       case Routes.companyscreen:

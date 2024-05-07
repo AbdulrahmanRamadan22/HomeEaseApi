@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:home_ease/core/helpers/navigation_extensions.dart';
+import 'package:home_ease/core/routing/routes.dart';
 import 'package:home_ease/core/theming/colors.dart';
 import 'package:home_ease/features/categorie/data/models/category_model.dart';
 import 'package:home_ease/features/service_type/ui/card_type_service.dart';
@@ -6,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ServiceType extends StatelessWidget {
   const ServiceType({super.key, required this.category});
-  final Categories category;
+  final Categories? category;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +22,12 @@ class ServiceType extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CardTypeService(
-              onTap: () {},
+              onTap: () {
+                context.pushNamed(Routes.hourlyServiceScreen,
+                    arguments: category
+                    // params: {'categoryId': category.id.toString()});
+                    );
+              },
               category: category,
               serviceType: 'Hourly service',
             ),
@@ -28,7 +35,10 @@ class ServiceType extends StatelessWidget {
               height: 40.h,
             ),
             CardTypeService(
-              onTap: () {},
+              onTap: () {
+                context.pushNamed(Routes.contractServiceScreen,
+                    arguments: category);
+              },
               category: category,
               serviceType: 'contract Service ',
             ),

@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:home_ease/core/di/dependency_injection.dart';
+import 'package:home_ease/core/helpers/navigation_extensions.dart';
+import 'package:home_ease/core/routing/routes.dart';
 import 'package:home_ease/core/theming/colors.dart';
 import 'package:home_ease/core/widgets/app_text_form_field.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -19,7 +21,7 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>  getIt<CategoryCubit>()..emitGetCategoriesStates(),
+      create: (context) => getIt<CategoryCubit>()..emitGetCategoriesStates(),
       child: Scaffold(
         backgroundColor: ColorsApp.lightGreen,
         appBar: AppBar(
@@ -61,16 +63,20 @@ class CategoriesScreen extends StatelessWidget {
                         return BuildCategoryItem(
                           category: categories[index],
                           onTap: () {
-                            // context.pushNamed(
-                            //   Routes.hourlyCleanScreen,
-                            // );
+                            context.pushNamed(
+                              Routes.serviceType,
+                              arguments: categories[index],
+                            );
                           },
                           // category: category[index],
                         );
                       },
                     );
                   }
-                  return const Center(child: CircularProgressIndicator());
+                  return const Center(
+                      child: CircularProgressIndicator(
+                    color: ColorsApp.mainGreen,
+                  ));
                 },
               ),
             ],

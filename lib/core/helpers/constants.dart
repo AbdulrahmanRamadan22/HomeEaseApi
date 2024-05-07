@@ -5,3 +5,5 @@ String profilePhotoURL =
 
 String cover =
     "https://images.pexels.com/photos/3575850/pexels-photo-3575850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+
+String serverPhotoURL = "http://192.168.0.101:8000/storage";

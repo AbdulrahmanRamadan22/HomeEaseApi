@@ -13,7 +13,10 @@ class Routes {
 
   static const String selectAddressScreen = "/selectAddressScreen";
   static const String addAddressScreen = "/addAddressScreen";
-  static const String hourlyCleanScreen = "/hourlyCleanScreen";
+  static const String hourlyServiceScreen = "/hourlyServiceScreen";
+  static const String contractServiceScreen = "/contractServiceScreen";
+
+  
   static const String companyscreen = "/companyscreen";
   static const String mywalletscreen = "/myWalletScreen";
   static const String dashbordscreen = "/dashbordscreen";
