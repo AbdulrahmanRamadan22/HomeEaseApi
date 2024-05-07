@@ -6,6 +6,7 @@ class ApiConstants {
 
       static const String register = "api/user/auth/register";
       
+      static const String categories = "api/user/auth/categorie/AllCategories";
 
 
 

@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:home_ease/core/networking/local/cache_helper.dart';
 import 'package:home_ease/features/auth/register/data/models/register_request_body.dart';
 import 'package:home_ease/features/auth/register/data/repos/register_repo.dart';
 import 'package:home_ease/features/auth/register/logic/register_state.dart';
@@ -33,6 +34,9 @@ class RegisterCubit extends Cubit<RegisterState> {
         phone: phoneNumber.toString(),
         passwordConfirmation: confirmPasswordController.text));
     response.when(success: (registerResponse) {
+      CacheHelper.saveData(
+          key: 'token', value: registerResponse.token.toString());
+
       emit(RegisterState.registerSuccess(registerResponse));
     }, failure: (error) {
       emit(RegisterState.registerError(

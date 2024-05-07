@@ -32,7 +32,7 @@ class LoginBlocListener extends StatelessWidget {
               backgroundColor: ColorsApp.mainGreen,
             );
             // CacheHelper.saveData(key: 'token', value: data.email);
-            context.pushReplacementNamed(Routes.companyscreen);
+            context.pushReplacementNamed(Routes.homeLayout);
           },
           error: (error) {
             setupErrorState(context, error);

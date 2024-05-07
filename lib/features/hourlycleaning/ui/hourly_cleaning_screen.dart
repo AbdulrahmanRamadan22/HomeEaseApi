@@ -64,8 +64,6 @@ class _HourlyCleaningScreen extends State<HourlyCleaningScreen> {
     }
   }
 
- 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
