@@ -34,6 +34,7 @@ class Routes {
 
 
   static const String historyScreen = "/historyScreen";
+  static const String orderDetalisScreen = "/orderDetalisScreen";
 
   
 
@@ -50,6 +51,6 @@ class Routes {
 
 
   
-
+ 
   
 }
