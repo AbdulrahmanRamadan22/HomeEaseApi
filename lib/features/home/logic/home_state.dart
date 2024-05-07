@@ -1,12 +1,18 @@
-// part of 'home_cubit.dart';
 
-// @immutable
-// abstract class HomeState {}
 
-// class HomeInitial extends HomeState {}
 
-// class GetCategoriesSuccess extends HomeState {}
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-// class GetCategoriesLoading extends HomeState {}
+part 'home_state.freezed.dart';
 
-// class GetCategoriesError extends HomeState {}
+@freezed
+class HomeState<T> with _$HomeState<T> {
+  
+  const factory HomeState.initial() = _Initial;
+
+  const factory HomeState.getCategoriesLoading() = GetCategoriesLoading;
+
+  const factory HomeState.getCategoriesSuccess(T data) = GetCategoriesSuccess<T>;
+
+  const factory HomeState.getCategoriesError({required String error}) = GetCategoriesError;
+}

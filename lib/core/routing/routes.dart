@@ -42,6 +42,11 @@ class Routes {
 
   static const String termsAndConditions = "/termsAndConditions";
 
+
+    static const String serviceType = "/serviceType";
+
+
+
   
  
   

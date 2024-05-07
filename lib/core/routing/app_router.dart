@@ -8,6 +8,7 @@ import 'package:home_ease/features/auth/login/logic/login_cubit.dart';
 import 'package:home_ease/features/auth/login/ui/login_screen.dart';
 import 'package:home_ease/features/auth/register/logic/register_cubit.dart';
 import 'package:home_ease/features/auth/register/ui/register_screen.dart';
+import 'package:home_ease/features/categorie/data/models/category_model.dart';
 import 'package:home_ease/features/categorie/ui/categories_scraan.dart';
 import 'package:home_ease/features/company/ui/company_screen.dart';
 import 'package:home_ease/features/contact_us/ui/contact_us_screen.dart';
@@ -27,6 +28,7 @@ import 'package:home_ease/features/resetpassword/ui/reset_password_screen.dart';
 import 'package:home_ease/features/select_address/ui/select_address_screen.dart';
 import 'package:home_ease/features/select_language/ui/select_language_screen.dart';
 import 'package:home_ease/features/select_language/ui/terms_and_conditions.dart';
+import 'package:home_ease/features/service_type/service_type.dart';
 
 class AppRouter {
   AppRouter();
@@ -48,6 +50,14 @@ class AppRouter {
       case Routes.historyScreen:
         return MaterialPageRoute(
           builder: (context) => const HistoryScreen(),
+        );
+
+      case Routes.serviceType:
+        final category = settings.arguments as Categories;
+        return MaterialPageRoute(
+          builder: (context) => ServiceType(
+            category: category,
+          ),
         );
 
       case Routes.onBoardingScreen:

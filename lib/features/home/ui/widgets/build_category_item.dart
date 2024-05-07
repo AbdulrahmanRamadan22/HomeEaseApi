@@ -1,22 +1,23 @@
 // ignore_for_file: depend_on_referenced_packages
 
+import 'dart:developer';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:home_ease/core/helpers/navigation_extensions.dart';
-import 'package:home_ease/core/routing/routes.dart';
 import 'package:home_ease/core/theming/colors.dart';
 import 'package:home_ease/core/theming/text_styles%20.dart';
-import 'package:home_ease/features/home/data/models/categorie_model.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home_ease/features/categorie/data/models/category_model.dart';
 
 class BuildCategoryItem extends StatelessWidget {
   final VoidCallback? onTap;
-  final Category category;
+  final Categories? category;
   const BuildCategoryItem({super.key, required this.category, this.onTap});
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap:onTap,
+      onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16.r),
@@ -38,7 +39,7 @@ class BuildCategoryItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.network(
-              category.imgUrl,
+              "http://192.168.0.101:8000/storage/${category!.path}",
               width: 120.w,
               height: 120.h,
               fit: BoxFit.fill,
@@ -47,9 +48,8 @@ class BuildCategoryItem extends StatelessWidget {
               height: 12.h,
             ),
             Text(
-              category.title,
-              // LocaleKeys.hourlyCleaning.tr(),
-              // "hourly cleaning".tr(),
+              "${category!.name}",
+
               style: TextStyles.font18Black700,
             ),
           ],

@@ -1,42 +1,18 @@
-// part of 'categorie_cubit.dart';
-
-// @immutable
-// abstract class CategorieState {}
-
-// class CategorieInitial extends CategorieState {}
 
 
 
-// class GetCategorieImagePickedSuccessState extends CategorieState {}
+import 'package:freezed_annotation/freezed_annotation.dart';
 
+part 'categorie_state.freezed.dart';
 
-// class GetCategorieImagePickedErrorState extends CategorieState {}
+@freezed
+class CategoryState<T> with _$CategoryState<T> {
+  
+  const factory CategoryState.initial() = _Initial;
 
+  const factory CategoryState.getCategoriesLoading() = GetCategoriesLoading;
 
-// class CategorieImageUpdateLoadingState extends CategorieState {}
+  const factory CategoryState.getCategoriesSuccess(T data) = GetCategoriesSuccess<T>;
 
-
-// class UploadCategorieImageErrorState  extends CategorieState {}
-
-
-
-// class UpdateCategorieSuccessState  extends CategorieState {}
-
-
-// class UpdateCategorieErrorState  extends CategorieState {}
-
-
-// class UpdateCategorieLoadingState  extends CategorieState {}
-
-
-
-
-
-
-
-
-
-
-
-
-
+  const factory CategoryState.getCategoriesError({required String error}) = GetCategoriesError;
+}

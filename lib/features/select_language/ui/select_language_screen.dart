@@ -51,9 +51,12 @@ class _SelectLanguageScreenState extends State<SelectLanguageScreen> {
                 SizedBox(
                   height: 40.h,
                 ),
-                Text(
-                  LocaleKeys.FindYourHomeService.tr(),
-                  style: TextStyles.font48Black700,
+                SizedBox(
+                  width: 320.w,
+                  child: Text(
+                    LocaleKeys.FindYourHomeService.tr(),
+                    style: TextStyles.font34Black700,
+                  ),
                 ),
                 SizedBox(
                   height: 58.h,
