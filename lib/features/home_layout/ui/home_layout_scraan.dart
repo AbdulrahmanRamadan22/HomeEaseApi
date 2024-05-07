@@ -39,6 +39,10 @@ class HomeLayoutScreen extends StatelessWidget {
               icon: Icon(Icons.history),
               label: "History",
             ),
+             const BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: "Settings",
+            ),
           ],
         ),
       );

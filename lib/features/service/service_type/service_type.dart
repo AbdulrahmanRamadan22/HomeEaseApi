@@ -3,7 +3,7 @@ import 'package:home_ease/core/helpers/navigation_extensions.dart';
 import 'package:home_ease/core/routing/routes.dart';
 import 'package:home_ease/core/theming/colors.dart';
 import 'package:home_ease/features/categorie/data/models/category_model.dart';
-import 'package:home_ease/features/service_type/ui/card_type_service.dart';
+import 'package:home_ease/features/service/service_type/ui/card_type_service.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ServiceType extends StatelessWidget {

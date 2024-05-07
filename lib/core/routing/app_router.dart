@@ -11,6 +11,7 @@ import 'package:home_ease/features/auth/register/ui/register_screen.dart';
 import 'package:home_ease/features/categorie/data/models/category_model.dart';
 import 'package:home_ease/features/categorie/ui/categories_scraan.dart';
 import 'package:home_ease/features/company/ui/company_screen.dart';
+import 'package:home_ease/features/contact_us/logic/contactus_cubit.dart';
 import 'package:home_ease/features/contact_us/ui/contact_us_screen.dart';
 import 'package:home_ease/features/history/history_screen.dart';
 import 'package:home_ease/features/home/ui/home_screen.dart';
@@ -29,7 +30,7 @@ import 'package:home_ease/features/resetpassword/ui/reset_password_screen.dart';
 import 'package:home_ease/features/select_address/ui/select_address_screen.dart';
 import 'package:home_ease/features/select_language/ui/select_language_screen.dart';
 import 'package:home_ease/features/select_language/ui/terms_and_conditions.dart';
-import 'package:home_ease/features/service_type/service_type.dart';
+import 'package:home_ease/features/service/service_type/service_type.dart';
 
 class AppRouter {
   AppRouter();
@@ -45,7 +46,10 @@ class AppRouter {
 
       case Routes.contactUsScreen:
         return MaterialPageRoute(
-          builder: (context) => const ContactUS(),
+          builder: (context) => BlocProvider(
+            create: (context) => getIt<ContactUsCubit>(),
+            child: const ContactUS(),
+          ),
         );
 
       case Routes.historyScreen:
@@ -132,7 +136,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const MyWalletScreen(),
         );
-         case Routes.orderDetalisScreen:
+      case Routes.orderDetalisScreen:
         return MaterialPageRoute(
           builder: (context) => const OrderDetalis(),
         );

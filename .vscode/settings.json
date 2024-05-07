@@ -2,5 +2,6 @@
   "cSpell.words": [
     "pinput"
   ],
-  "C_Cpp_Runner.msvcBatchPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat"
+  "C_Cpp_Runner.msvcBatchPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsall.bat",
+  "cmake.sourceDirectory": "D:/my work projects/home_ease/linux"
 }

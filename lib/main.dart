@@ -32,9 +32,11 @@ void main() async {
 
   var selectLanguageScreen = CacheHelper.getData(key: 'selectLanguageScreen');
 
-  token = CacheHelper.getData(key: 'token');
+  token = CacheHelper.getData(key:'token');
 
   token != null ? token = CacheHelper.getData(key: 'token') : token = null;
+
+  log(token.toString());
 
   if (selectLanguageScreen != null) {
     if (onBoarding != null) {

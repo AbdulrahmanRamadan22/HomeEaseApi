@@ -31,7 +31,7 @@ class ContainerStepOneContractService extends StatelessWidget {
         SizedBox(
           height: 28.h,
         ),
-        Text('number of Hours'.tr(), style: TextStyles.font16Black600),
+        Text('number Of Months'.tr(), style: TextStyles.font16Black600),
         SizedBox(
           height: 8.h,
         ),

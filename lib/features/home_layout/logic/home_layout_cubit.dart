@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:home_ease/features/categorie/ui/categories_scraan.dart';
 import 'package:home_ease/features/history/history_screen.dart';
 import 'package:home_ease/features/home/ui/home_screen.dart';
+import 'package:home_ease/features/profile/ui/profile_screen.dart';
 import 'package:meta/meta.dart';
 
 part 'home_layout_state.dart';
@@ -18,8 +19,7 @@ class HomeLayoutCubit extends Cubit<HomeLayoutState> {
     const HomeScreen(),
     const CategoriesScreen(),
     const HistoryScreen(),
-
-    // const ProfileScreen(),
+    const ProfileScreen(),
   ];
   void changeBottomNav(int index) {
     currentIndex = index;

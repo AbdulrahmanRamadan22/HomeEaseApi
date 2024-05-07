@@ -12,7 +12,6 @@ import 'package:home_ease/core/widgets/build_grid_view.dart';
 import 'package:home_ease/features/home/logic/home_cubit.dart';
 import 'package:home_ease/features/home/logic/home_state.dart';
 import 'package:home_ease/features/home/ui/widgets/build_category_item.dart';
-import 'package:home_ease/features/home/ui/widgets/card_location.dart';
 import 'package:home_ease/features/home/ui/widgets/logo_and_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:home_ease/translations/locale_keys.dart';
@@ -145,3 +144,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+

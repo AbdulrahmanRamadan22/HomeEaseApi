@@ -3,116 +3,102 @@ import 'dart:ffi';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home_ease/core/helpers/constants.dart';
 import 'package:home_ease/core/theming/colors.dart';
 import 'package:home_ease/core/theming/text_styles%20.dart';
+import 'package:home_ease/features/service/data/models/product_company.dart';
 
 class CardDetails extends StatelessWidget {
-  const CardDetails({
-    Key? key,
-    this.imageIcon,
-    this.textStar,
-    required this.subtitleText1,
-    required this.subtitleText2,
-    required this.priceName,
-    required this.priceNumber,
-    this.imagecity,
-    required this.cityName,
-    this.imageHourlyclean,
-    required this.hourlycleanText,
-    required this.hour,
-  }) : super(key: key);
-  final String? imageIcon;
-  final String? textStar;
-  final String subtitleText1;
-  final String subtitleText2;
-  final String priceName;
-  final String priceNumber;
-  final String? imagecity;
-  final String cityName;
-  final String? imageHourlyclean;
-  final String hourlycleanText;
-  final String hour;
+  final Companies? companies;
+
+  const CardDetails({super.key, this.companies});
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
       child: Container(
         width: double.infinity,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           color: ColorsApp.white,
-          borderRadius: BorderRadius.all(
+          border: Border.all(color: ColorsApp.gray),
+          borderRadius: const BorderRadius.all(
             Radius.circular(8),
           ),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                Image.asset(imageIcon!),
-                SizedBox(
-                  width: 8.w,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'United Group Company',
-                      style: TextStyles.font16Black700,
-                    ),
-                    Row(
-                      children: [
-                        Text(textStar!),
-                        Text(textStar!),
-                        Text(textStar!),
-                        Text(textStar!),
-                        Text(textStar!),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      subtitleText1,
-                      style: TextStyles.font10Bgray500,
-                    ),
-                    Text(
-                      subtitleText2,
-                      style: TextStyles.font10Bgray500,
-                    ),
-                    SizedBox(height: 12.h),
-                  ],
-                ),
-                const SizedBox(
-                  width: 70,
-                ),
-                Column(
-                  children: [
-                    Text(priceName, style: TextStyles.font14Bgray500),
-                    Text(priceNumber, style: TextStyles.font18Black700),
-                  ],
-                ),
-              ],
+            SizedBox(height: 12.h),
+            ListTile(
+              leading: Image.network(
+                "$serverPhotoURL/${companies!.path}",
+              ),
+              title: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('${companies!.name}', style: TextStyles.font16Black700),
+                  const Text("⭐⭐⭐⭐⭐"),
+                ],
+              ),
+              subtitle: Text(
+                '${companies!.description}',
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              ),
+              trailing: Column(
+                children: [
+                  Text("Price", style: TextStyles.font14Bgray500),
+                  Text('${companies!.price}', style: TextStyles.font16Black700),
+                ],
+              ),
             ),
-            Row(
-              children: [
-                Image.asset(imagecity!),
-                SizedBox(
-                  width: 8.w,
-                ),
-                Text(cityName, style: TextStyles.font14Black500),
-                const Spacer(),
-                Image.asset(imageHourlyclean!),
-                SizedBox(
-                  width: 8.w,
-                ),
-                Text(hourlycleanText),
-                const Spacer(),
-                const Icon(Icons.hourglass_bottom_outlined),
-                const Text('4hour')
-              ],
+
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+              child: Row(
+                children: [
+                  Text("${companies!.nationality}",
+                      style: TextStyles.font14Black500),
+                  const Spacer(),
+                  Image.asset("assets/images/Group1.png"),
+                  SizedBox(
+                    width: 8.w,
+                  ),
+                  Text("${companies!.name}", style: TextStyles.font14Black500),
+                  const Spacer(),
+                  const Icon(Icons.watch_later_outlined),
+                  SizedBox(
+                    width: 3.w,
+                  ),
+                  Text(
+                    "${companies!.numbers} Months",
+                  ),
+                ],
+              ),
             )
+
+            // Row(
+            //   children: [
+            //     Text("${companies!.nationality}",
+            //         style: TextStyles.font14Black500),
+            //     SizedBox(
+            //       width: 8.w,
+            //     ),
+            //     const Spacer(),
+            //     Image.asset("assets/images/Group1.png"),
+            //     SizedBox(
+            //       width: 8.w,
+            //     ),
+            //     Text("${companies!.name}", style: TextStyles.font14Black500),
+            //     const Spacer(),
+            //     const Icon(Icons.hourglass_bottom_outlined),
+            //     Text(
+            //       "${companies!.numbers} ${companies!.tybe}",
+            //     )
+            //   ],
+            // )
           ],
         ),
       ),

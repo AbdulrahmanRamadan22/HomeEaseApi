@@ -5,13 +5,17 @@ import 'dart:developer';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:home_ease/core/di/dependency_injection.dart';
 import 'package:home_ease/core/helpers/app_regex.dart';
 import 'package:home_ease/core/helpers/constants.dart';
 import 'package:home_ease/core/theming/colors.dart';
 import 'package:home_ease/core/theming/text_styles%20.dart';
 import 'package:home_ease/core/widgets/custom_button.dart';
 import 'package:home_ease/features/categorie/data/models/category_model.dart';
+import 'package:home_ease/features/categorie/logic/categorie_cubit.dart';
+import 'package:home_ease/features/service/logic/company_cubit.dart';
 import 'package:home_ease/features/service/ui/widget/contract%20_service/container_step.3.dart';
 import 'package:home_ease/features/service/ui/widget/contract%20_service/container_step_2.dart';
 import 'package:home_ease/features/service/ui/widget/contract%20_service/containet_step_1.dart';
@@ -69,92 +73,96 @@ class _HourlyCleaningScreen extends State<ContractServiceScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: ColorsApp.lightGreen,
-      appBar: AppBar(
-        backgroundColor: ColorsApp.white,
-      ),
-      body: Theme(
-        data: Theme.of(context).copyWith(
-            colorScheme: const ColorScheme.light(primary: ColorsApp.mainGreen)),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(left: 24.w, right: 20),
-              child: Container(
-                color: ColorsApp.white,
-                child: Row(
-                  children: [
-                    Text(
-                      '${widget.category!.name}'.tr(),
-                      style: TextStyles.font24mainGreen700,
-                    ),
-                    const Spacer(),
-                    Image.network(
-                      '$serverPhotoURL/${widget.category!.path}',
-                      width: 100,
-                    ),
-                  ],
+    return BlocProvider(
+      create: (context) =>getIt<CompanyCubit>()..emitGetContractAllCompaniesStates(),
+      child: Scaffold(
+        backgroundColor: ColorsApp.lightGreen,
+        appBar: AppBar(
+          backgroundColor: ColorsApp.white,
+        ),
+        body: Theme(
+          data: Theme.of(context).copyWith(
+              colorScheme:
+                  const ColorScheme.light(primary: ColorsApp.mainGreen)),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 24.w, right: 20),
+                child: Container(
+                  color: ColorsApp.white,
+                  child: Row(
+                    children: [
+                      Text(
+                        '${widget.category!.name}'.tr(),
+                        style: TextStyles.font24mainGreen700,
+                      ),
+                      const Spacer(),
+                      Image.network(
+                        '$serverPhotoURL/${widget.category!.path}',
+                        width: 100,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              child: Form(
-                key: formKey,
-                child: Stepper(
-                  elevation: 0,
-                  type: StepperType.horizontal,
-                  steps: _mySteps(),
-                  currentStep: _currentStep,
-                  onStepTapped: (step) {
-                    formKey.currentState!
-                        .validate(); //this will trigger validation
-                    setState(() {
-                      _currentStep = step;
-                    });
-                  },
-                  onStepContinue: () {
-                    setState(
-                      () {
-                        _goToNextStep();
-                      },
-                    );
-                  },
-                  onStepCancel: () {
-                    setState(() {
-                      _goToPreviousStep();
-                    });
-                  },
-                  controlsBuilder:
-                      (BuildContext context, ControlsDetails controlsDetails) {
-                    return Padding(
-                      padding: EdgeInsets.symmetric(vertical: 20.h),
-                      child: Row(
-                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          if (_currentStep >= 1)
+              Expanded(
+                child: Form(
+                  key: formKey,
+                  child: Stepper(
+                    elevation: 0,
+                    type: StepperType.horizontal,
+                    steps: _mySteps(),
+                    currentStep: _currentStep,
+                    onStepTapped: (step) {
+                      formKey.currentState!
+                          .validate(); //this will trigger validation
+                      setState(() {
+                        _currentStep = step;
+                      });
+                    },
+                    onStepContinue: () {
+                      setState(
+                        () {
+                          _goToNextStep();
+                        },
+                      );
+                    },
+                    onStepCancel: () {
+                      setState(() {
+                        _goToPreviousStep();
+                      });
+                    },
+                    controlsBuilder: (BuildContext context,
+                        ControlsDetails controlsDetails) {
+                      return Padding(
+                        padding: EdgeInsets.symmetric(vertical: 20.h),
+                        child: Row(
+                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            if (_currentStep >= 1)
+                              Expanded(
+                                child: CustomButton(
+                                  text: 'Back'.tr(),
+                                  onPressed: _goToPreviousStep,
+                                ),
+                              ),
+                            SizedBox(width: 10.w),
                             Expanded(
                               child: CustomButton(
-                                text: 'Back'.tr(),
-                                onPressed: _goToPreviousStep,
+                                onPressed: _goToNextStep,
+                                text: 'Next'.tr(),
                               ),
                             ),
-                          SizedBox(width: 10.w),
-                          Expanded(
-                            child: CustomButton(
-                              onPressed: _goToNextStep,
-                              text: 'Next'.tr(),
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
+                          ],
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
