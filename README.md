@@ -16,6 +16,8 @@
 ## 📑 Table of Contents
 
 - ⚡ [Quick Start](#-quick-start)
+- 📱 [Screenshots](#-screenshots)
+- 🔗 [Case Study](#-case-study)
 - 💎 [Features](#-features)
 - 🚀 [Technologies Used](#-technologies-used)
 - 🏗 [Architecture](#-architecture)
@@ -23,8 +25,6 @@
 - 🌐 [API Endpoints](#-api-endpoints)
 - 📂 [Project Structure](#-project-structure)
 - 🧪 [Testing & Coverage](#-testing--coverage)
-- 📱 [Screenshots](#-screenshots)
-- 🔗 [Case Study](#-case-study)
 - 🏁 [Setup and Installation](#-setup-and-installation)
 - 💡 [Challenges & Solutions](#-challenges--solutions)
 - 📬 [Get In Touch](#-get-in-touch)
@@ -40,6 +40,35 @@ cd home_ease
 flutter pub get
 flutter run
 ```
+
+<hr>
+
+## 📱 Screenshots
+
+*(Add paths to your screenshots inside the assets folder)*
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><img src="assets/images/homeease_screen/home.webp" width="200" /><br><b>✨ Home</b></td>
+      <td align="center"><img src="assets/images/homeease_screen/process2.webp" width="200" /><br><b>🏠 Service Booking</b></td>
+      <td align="center"><img src="assets/images/homeease_screen/mywallet.webp" width="200" /><br><b>💳 Wallet & Payment</b></td>
+    </tr>
+    <tr>
+      <td align="center"><img src="assets/images/homeease_screen/address.webp" width="200" /><br><b>📍 Address Selection</b></td>
+      <td align="center"><img src="assets/images/homeease_screen/profile.webp" width="200" /><br><b>👤 User Profile</b></td>
+      <td align="center"><img src="assets/images/homeease_screen/orderdetalis.webp" width="200" /><br><b>🛠️ Order Details</b></td>
+    </tr>
+  </table>
+</div>
+
+<hr>
+
+## 🔗 Case Study
+
+For an in-depth dive into the technical decisions, architecture, and complete journey of building **HomeEase**, check out the comprehensive Case Study:
+
+**👉 [Read the HomeEase Case Study Here](#)** *(Replace with actual external link)*
 
 <hr>
 
@@ -149,6 +178,17 @@ lib/
 └── home_ease__app.dart    # Root widget and material app wrapper
 ```
 
+---
+
+### Feature Breakdown Example
+
+*Every module in the `features/` directory follows a consistent sub-structure:*
+
+- **`/models`**: Data structures and JSON serialization logic.
+- **`/repos`**: Abstract and concrete implementations for data fetching.
+- **`/logic`**: State and Cubit files handling user events and UI updates.
+- **`/ui`**: Highly modular screens and small UI components specific to the feature.
+
 <hr>
 
 ## 🧪 Testing & Coverage
@@ -171,37 +211,18 @@ Ensuring absolute reliability through comprehensive testing.
 
 <hr>
 
-## 📱 Screenshots
-
-*(Add paths to your screenshots inside the assets folder)*
-
-<div align="center">
-  <table>
-    <tr>
-      <td align="center"><img src="assets/images/placeholder1.png" width="200" /><br><b>✨ Dashboard</b></td>
-      <td align="center"><img src="assets/images/placeholder2.png" width="200" /><br><b>🏠 Service Booking</b></td>
-      <td align="center"><img src="assets/images/placeholder3.png" width="200" /><br><b>💳 Wallet & Payment</b></td>
-    </tr>
-  </table>
-</div>
-
-<hr>
-
-## 🔗 Case Study
-
-For an in-depth dive into the technical decisions, architecture, and complete journey of building **HomeEase**, check out the comprehensive Case Study:
-
-**👉 [Read the HomeEase Case Study Here](#)** *(Replace with actual external link)*
-
-<hr>
-
 ## 🏁 Setup and Installation
 
 ### Prerequisites
 
-- **[Flutter SDK](https://docs.flutter.dev/get-started/install):** (v3.3.4 or above)
+Ensure the following are installed on your development machine:
+
+- **[Flutter SDK](https://docs.flutter.dev/get-started/install):** (v3.3.4 or above recommended)
 - **Dart SDK:** Bundled with Flutter.
-- **[Android Studio](https://developer.android.com/studio) / [VS Code](https://code.visualstudio.com/)**
+- **[Android Studio](https://developer.android.com/studio):** Required for Android development and emulators.
+- **[Xcode](https://developer.apple.com/xcode/):** (macOS only) Required for iOS development and simulators.
+- **[CocoaPods](https://cocoapods.org/):** Dependency manager for iOS projects.
+- **[Git](https://git-scm.com/downloads):** Required for version control.
 
 ### 📥 Cloning the Repository
 
