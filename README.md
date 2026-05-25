@@ -43,6 +43,15 @@ flutter run
 
 <hr>
 
+## 🔗 Case Study
+
+For an in-depth dive into the technical decisions, architecture, and complete journey of building **HomeEase**, check out the comprehensive Case Study:
+
+> 🎯 **[View Interactive Case Study →](https://abdelrahmanramadan.netlify.app/?tab=jobizz-details)**
+
+
+<hr>
+
 ## 📱 Screenshots
 
 *(Add paths to your screenshots inside the assets folder)*
@@ -62,13 +71,6 @@ flutter run
   </table>
 </div>
 
-<hr>
-
-## 🔗 Case Study
-
-For an in-depth dive into the technical decisions, architecture, and complete journey of building **HomeEase**, check out the comprehensive Case Study:
-
-> 🎯 **[View Interactive Case Study →](https://abdelrahmanramadan.netlify.app/?tab=jobizz-details)**
 
 
 <hr>
