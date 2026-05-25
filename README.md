@@ -47,7 +47,7 @@ flutter run
 
 For an in-depth dive into the technical decisions, architecture, and complete journey of building **HomeEase**, check out the comprehensive Case Study:
 
-> 🎯 **[View Interactive Case Study →](https://abdelrahmanramadan.netlify.app/?tab=jobizz-details)**
+> 🎯 **[View Interactive Case Study →](https://abdelrahmanramadan.netlify.app/?tab=homeease-details)**
 
 
 <hr>
